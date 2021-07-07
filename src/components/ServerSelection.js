@@ -2,7 +2,7 @@ import sfmLogo from "../assets/safemoon-logo.png";
 import dogeLogo from "../assets/dogecoin-logo.png";
 import { useState } from 'react';
 
-const ServerSelection = ({ selectGameServer }) => {
+const ServerSelection = ({ selectGameServer, currentGame }) => {
 
     const coins = [
         'Safemoon',
@@ -149,7 +149,7 @@ const ServerSelection = ({ selectGameServer }) => {
     
     return(
         <div style={styles.container}>
-            <h4 style={styles.headerText}>Select Game</h4>
+            <h4 style={styles.headerText}>Select {currentGame} Server</h4>
             <div style={styles.coinselectContainer}>
                 <img src={sfmLogo} alt='logo' style={getLogoStyle(coins[0])} onClick={() => updateActiveCoin(coins[0])}/>
                 <img src={dogeLogo} alt='logo' style={getLogoStyle(coins[1])} onClick={() => updateActiveCoin(coins[1])}/>
@@ -157,11 +157,11 @@ const ServerSelection = ({ selectGameServer }) => {
             <div style={styles.serverOptionsContainer}>
 
                 {serverNames.map((name, i) => (
-                    <div>
+                    <div key={i}>
                     <div 
                     style={styles.serverOptionButton} 
                     onClick={() => selectServer(i)}
-                    key={i}>
+                    >
                         <code style={styles.serverName}>
                             {name}
                         </code>
@@ -175,14 +175,6 @@ const ServerSelection = ({ selectGameServer }) => {
                 ))}
             </div>
             <div style={styles.bottomServerOptions}>
-                <div style={styles.freeAndMoonWarOptionButton}>
-                    <code style={styles.freeAndMoonWarText}>
-                        Moon War
-                    </code><br />
-                    <code style={styles.freeAndMoonWarDescription}>
-                        Safemoon and Dogecoin Come Together! Duke it out for Rights to the Moon!
-                    </code>
-                </div>
                 <div style={styles.freeAndMoonWarOptionButton}>
                     <code style={styles.freeAndMoonWarText}>
                         Practice

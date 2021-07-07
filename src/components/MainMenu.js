@@ -1,11 +1,11 @@
 import GameState from './App'
 
-const MainMenu = ({ selectServer }) => {
+const MainMenu = ({ goToGameSelect }) => {
 
-    const goToServerSelect = () => {
+    const goToGameSelection = () => {
         // User should be signed up to advance this far
         // Otherwise, they should be directed to the Free Server automatically
-        selectServer();
+        goToGameSelect();
     }
 
     const styles = {
@@ -36,7 +36,7 @@ const MainMenu = ({ selectServer }) => {
     return(
         <div style={styles.MainMenuContainer}>
             <h4 style={styles.headerText}>Welcome To Moon Wars</h4>
-            <button style={styles.selectServerButton} onClick={() => goToServerSelect()}>
+            <button style={styles.selectServerButton} onClick={() => goToGameSelection()}>
                 Play
             </button>
         </div>
