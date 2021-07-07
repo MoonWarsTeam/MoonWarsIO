@@ -22,15 +22,16 @@ const GameSelection = ({ selectGame }) => {
         },
         gameSelectContainer: {
             display:'flex',
-            flexDirection:'row',
+            flexDirection:'column',
             justifyContent:'space-around',
-            marginTop:'5vh'
+            marginTop:'3.5vh',
         },
         gameOption: {
-            height:'18vh',
+            width:'33vw',
             objectFit:'contain',
             border:'1px solid gray',
-            cursor:'pointer'
+            cursor:'pointer',
+            marginBottom:'5vh'
         },
         gameTitle:{
             fontSize:'calc(1rem + 0.75vw + 0.5vh)',
@@ -48,7 +49,7 @@ const GameSelection = ({ selectGame }) => {
                     <img style={styles.gameOption} src={worms} alt='worms' onClick={() => selectTheGame('Worms')}/>
                 </div>
                 <div>
-                    <code style={styles.gameTitle}>Tanks</code><br />
+                    <code style={styles.gameTitle}>Moon War</code><br />
                     <img style={styles.gameOption} src={tanks} alt='tanks' onClick={() => selectTheGame('Tanks')}/>
                 </div>
             </div>
