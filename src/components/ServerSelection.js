@@ -56,22 +56,22 @@ const ServerSelection = ({ selectGameServer }) => {
 
     const styles = {
         container: {
-            minHeight:'100%',
+            minHeight:'100vh',
             width:'100vw',
             textAlign:'center',
             display:'flex',
-            flexDirection:'column'
+            flexDirection:'column',
         },
         headerText:{
-            fontSize:'calc(1rem + 1.5vw)',
+            fontSize:'calc(1rem + 0.75vw + 0.75vh)',
             fontFamily:'monospace'
         },
         serverOptionsContainer:{
             alignSelf:'center',
-            height:'34vh',
+            height:'50vh',
             display:'grid',
             gridTemplateColumns:'28vw 28vw 28vw',
-            gridTemplateRows: '27vh 27vh 27vh'
+            gridTemplateRows: '24vh 24vh 24vh'
         },
         serverOptionButton:{
             width:'26vw',
@@ -85,7 +85,34 @@ const ServerSelection = ({ selectGameServer }) => {
             cursor:'pointer',
             border: '1px solid gray',
             textAlign:'center',
-            
+        },
+        freeAndMoonWarOptionButton:{
+            width:'85vw',
+            height:'10vh',
+            backgroundColor:'var(--highlightedBGColor)',
+            color:'white',
+            textDecoration:'none',
+            alignSelf:'center',
+            fontSize:'1rem',
+            fontFamily:'monospace',
+            cursor:'pointer',
+            border: '1px solid gray',
+            textAlign:'center',
+            marginBottom:'1.5vh'
+        },
+        freeAndMoonWarText:{
+            fontSize:'calc(1rem + 1vw + 1vh)',
+            fontFamily:'monospace',
+        },
+        freeAndMoonWarDescription:{
+            fontSize:'calc(0.4rem + 0.5vw)',
+            fontFamily:'monospace',
+            fontStyle:'italic'
+        },
+        bottomServerOptions: {
+            height:'30vh',
+            display:'flex',
+            flexDirection:'column',
         },
         serverDescription:{
             fontSize:'calc(0.4rem + 1vw)',
@@ -122,7 +149,7 @@ const ServerSelection = ({ selectGameServer }) => {
     
     return(
         <div style={styles.container}>
-            <h4 style={styles.headerText}>Select Game Server</h4>
+            <h4 style={styles.headerText}>Select Game</h4>
             <div style={styles.coinselectContainer}>
                 <img src={sfmLogo} alt='logo' style={getLogoStyle(coins[0])} onClick={() => updateActiveCoin(coins[0])}/>
                 <img src={dogeLogo} alt='logo' style={getLogoStyle(coins[1])} onClick={() => updateActiveCoin(coins[1])}/>
@@ -146,6 +173,24 @@ const ServerSelection = ({ selectGameServer }) => {
                     }
                     </div>
                 ))}
+            </div>
+            <div style={styles.bottomServerOptions}>
+                <div style={styles.freeAndMoonWarOptionButton}>
+                    <code style={styles.freeAndMoonWarText}>
+                        Moon War
+                    </code><br />
+                    <code style={styles.freeAndMoonWarDescription}>
+                        Safemoon and Dogecoin Come Together! Duke it out for Rights to the Moon!
+                    </code>
+                </div>
+                <div style={styles.freeAndMoonWarOptionButton}>
+                    <code style={styles.freeAndMoonWarText}>
+                        Practice
+                    </code><br />
+                    <code style={styles.freeAndMoonWarDescription}>
+                        Hone your Skills in the Free Arena
+                    </code>
+                </div>
             </div>
         </div>
     )
