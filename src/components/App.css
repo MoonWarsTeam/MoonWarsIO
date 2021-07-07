@@ -1,9 +1,10 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
+:root {
+  --backgroundColor: #282c34;
+  --highlightedBGColor: #393d45;
 }
 
-.GameContainer {
+.App {
+  text-align: center;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -12,4 +13,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.GameContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
