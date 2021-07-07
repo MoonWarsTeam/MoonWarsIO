@@ -26,6 +26,7 @@ const MainMenu = ({ selectServer }) => {
             backgroundColor:'var(--highlightedBGColor)',
             color:'white',
             textDecoration:'none',
+            cursor:'pointer',
             alignSelf:'center',
             fontSize:'1rem',
             fontFamily:'monospace'
@@ -34,7 +35,7 @@ const MainMenu = ({ selectServer }) => {
 
     return(
         <div style={styles.MainMenuContainer}>
-            <h4 style={styles.headerText}>MAIN MENU</h4>
+            <h4 style={styles.headerText}>Welcome To Moon Wars</h4>
             <button style={styles.selectServerButton} onClick={() => goToServerSelect()}>
                 Play
             </button>
