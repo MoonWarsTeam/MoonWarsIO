@@ -15,7 +15,8 @@ export const GameState = {
 
 const GAMES = [
   'NONE',
-  'Worms',
+  'Snake',
+  'Agario',
   'Tanks'
 ]
 

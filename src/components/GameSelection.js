@@ -1,5 +1,6 @@
-import worms from "../assets/moonworms.png";
+import snakes from "../assets/snakeio.png";
 import tanks from "../assets/tanks.png";
+import agario from "../assets/agariologo.png";
 
 const GameSelection = ({ selectGame }) => {
 
@@ -26,10 +27,16 @@ const GameSelection = ({ selectGame }) => {
             justifyContent:'space-around',
             marginTop:'3.5vh',
         },
+        gameSelectTopContainer:{
+            display:'flex',
+            flexDirection:'row',
+            justifyContent:'space-around'
+        },
         gameOption: {
             width:'33vw',
             objectFit:'contain',
             border:'1px solid gray',
+            borderRadius:'22.5%',
             cursor:'pointer',
             marginBottom:'5vh'
         },
@@ -44,9 +51,16 @@ const GameSelection = ({ selectGame }) => {
         <div style={styles.container}>
             <h4 style={styles.headerText}>Select Game To Play</h4>
             <div style={styles.gameSelectContainer}>
-                <div>
-                    <code style={styles.gameTitle}>Worms</code><br />
-                    <img style={styles.gameOption} src={worms} alt='worms' onClick={() => selectTheGame('Worms')}/>
+                <div style={styles.gameSelectTopContainer}>
+                    <div>
+                        <code style={styles.gameTitle}>Snake</code><br />
+                        <img style={styles.gameOption} src={snakes} alt='snake' onClick={() => selectTheGame('Snake')}/>
+                    </div>
+                    <div>
+                        <code style={styles.gameTitle}>Agario</code><br />
+                        <img style={styles.gameOption} src={agario} alt='agario' onClick={() => selectTheGame('Agario')}/>
+                    </div>
+                    
                 </div>
                 <div>
                     <code style={styles.gameTitle}>Moon War</code><br />
