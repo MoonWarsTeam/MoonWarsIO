@@ -1,21 +1,22 @@
-import { Scene } from "phaser";
-import logoImg from "../assets/safemoon-logo.png";
+import { Scene3D } from "@enable3d/phaser-extension";
+// import logoImg from "../assets/safemoon-logo.png";
 
-export default class MoonWarsGame extends Scene {
+export default class MoonWarsGame extends Scene3D {
+    constructor() {
+        super({ key: 'MoonWarsGame' })
+    }
+    
     preload() {
-        this.load.image("logo", logoImg);
+        // this.load.image("logo", logoImg);
       }
 
-    create() {
-    const logo = this.add.image(400, 150, "logo");
+    init() {
+        this.accessThirdDimension();
+        console.log('init done')
+    }
 
-    this.tweens.add({
-        targets: logo,
-        y: 450,
-        duration: 2000,
-        ease: "Power2",
-        yoyo: true,
-        loop: -1
-    });
+    create() {
+        this.third.warpSpeed()
+        this.third.physics.add.box()
     }
 }

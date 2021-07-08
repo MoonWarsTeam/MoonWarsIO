@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@enable3d/phaser-extension": "^0.22.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "matter-js": "0.16.1",
     "mime": "^1.6.0",
     "phaser": "^3.55.2",
+    "poly-decomp": "^0.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "three": "0.127.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
