@@ -1,6 +1,7 @@
 import './App.css';
 import Game from './Game';
 import MainMenu from './MainMenu';
+import Header from './Header';
 import ServerSelection from './ServerSelection';
 import GameSelection from './GameSelection';
 import { useState } from 'react';
@@ -48,7 +49,10 @@ function App() {
 
       case GameState.MainMenu:
         return(
-          <MainMenu goToGameSelect={() => updateGameState(GameState.GameSelection)}/>
+          <div>
+            <Header />
+            <MainMenu goToGameSelect={() => updateGameState(GameState.GameSelection)}/>
+          </div>
         );
       case GameState.Game:
         return(
@@ -58,16 +62,25 @@ function App() {
         );
       case GameState.GameSelection:
         return(
-          <GameSelection selectGame={(wg) => chooseGame(wg)}/>
+          <div>
+            <Header />
+            <GameSelection selectGame={(wg) => chooseGame(wg)}/>
+          </div>
         )
       case GameState.ServerSelection:
         return(
-          <ServerSelection selectGameServer={() => updateGameState(GameState.Game)} currentGame={currentGame}/>
+          <div>
+            <Header />
+            <ServerSelection selectGameServer={() => updateGameState(GameState.Game)} currentGame={currentGame}/>
+          </div>
         );
       default:
         console.log("Unhandled GameState: ", gameState);
         return(
-          <MainMenu goToGameSelect={() => updateGameState(GameState.GameSelection)}/>
+          <div>
+            <Header />
+            <MainMenu goToGameSelect={() => updateGameState(GameState.GameSelection)}/>
+          </div>        
         );
     }
   }

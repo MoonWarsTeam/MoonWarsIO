@@ -16,6 +16,7 @@ const GameSelection = ({ selectGame }) => {
             textAlign:'center',
             display:'flex',
             flexDirection:'column',
+            marginTop:'5vh'
         },
         headerText:{
             fontSize:'calc(1rem + 0.75vw + 0.75vh)',

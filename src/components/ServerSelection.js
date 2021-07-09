@@ -61,6 +61,7 @@ const ServerSelection = ({ selectGameServer, currentGame }) => {
             textAlign:'center',
             display:'flex',
             flexDirection:'column',
+            marginTop:'5vh'
         },
         headerText:{
             fontSize:'calc(1rem + 0.75vw + 0.75vh)',
@@ -68,14 +69,13 @@ const ServerSelection = ({ selectGameServer, currentGame }) => {
         },
         serverOptionsContainer:{
             alignSelf:'center',
-            height:'50vh',
-            display:'grid',
-            gridTemplateColumns:'28vw 28vw 28vw',
-            gridTemplateRows: '24vh 24vh 24vh'
+            display:'flex',
+            flexDirection:'column',
+            marginBottom:'2vh'
         },
         serverOptionButton:{
-            width:'26vw',
-            height:'15vh',
+            width:'50vw',
+            height:'8.5vh',
             backgroundColor:'var(--highlightedBGColor)',
             color:'white',
             textDecoration:'none',
@@ -84,7 +84,11 @@ const ServerSelection = ({ selectGameServer, currentGame }) => {
             fontFamily:'monospace',
             cursor:'pointer',
             border: '1px solid gray',
-            textAlign:'center',
+            textAlign:'left',
+            marginBottom:'2vh',
+            display:'flex',
+            flexDirection:'row',
+            justifyContent:'space-between'
         },
         freeAndMoonWarOptionButton:{
             width:'85vw',
@@ -118,10 +122,14 @@ const ServerSelection = ({ selectGameServer, currentGame }) => {
             fontSize:'calc(0.4rem + 1vw)',
             fontFamily:'monospace',
             fontStyle:'italic',
+            alignSelf:'center',
+            marginRight:'1vw'
         },
         serverName:{
             fontSize:'calc(1rem + 1vw)',
             fontFamily:'monospace',
+            alignSelf:'center',
+            marginLeft:'1vw'
         },
         coinselectContainer:{
             display:'flex',
@@ -157,21 +165,20 @@ const ServerSelection = ({ selectGameServer, currentGame }) => {
             <div style={styles.serverOptionsContainer}>
 
                 {serverNames.map((name, i) => (
-                    <div key={i}>
                     <div 
                     style={styles.serverOptionButton} 
                     onClick={() => selectServer(i)}
+                    key={i}
                     >
                         <code style={styles.serverName}>
                             {name}
-                        </code>
-                    </div>
-                    {activeCoin === coins[0] ? 
+                        </code><br />
+                        {activeCoin === coins[0] ? 
                         <code style={styles.serverDescription}>{serverBuyInsSFM[i]} {activeCoin}</code>
                         :
                         <code style={styles.serverDescription}>{serverBuyInsDOGE[i]} {activeCoin}</code>
-                    }
-                    </div>
+                        }
+                    </div>                    
                 ))}
             </div>
             <div style={styles.bottomServerOptions}>
