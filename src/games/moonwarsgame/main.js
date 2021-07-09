@@ -1,7 +1,7 @@
-import { Scene3D } from "@enable3d/phaser-extension";
+import BaseGame from "../shared/base";
 // import logoImg from "../assets/safemoon-logo.png";
 
-export default class MoonWarsGame extends Scene3D {
+export default class MoonWarsGame extends BaseGame {
     constructor() {
         super({ key: 'MoonWarsGame' })
     }
@@ -11,12 +11,10 @@ export default class MoonWarsGame extends Scene3D {
       }
 
     init() {
-        this.accessThirdDimension();
-        console.log('init done')
+        super.init();
     }
 
     create() {
-        this.third.warpSpeed()
-        this.third.physics.add.box()
+        super.create();
     }
 }
