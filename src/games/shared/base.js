@@ -1,6 +1,9 @@
-import { ExtendedObject3D, Scene3D } from "@enable3d/phaser-extension";
+import { Scene3D } from "@enable3d/phaser-extension";
 import Phaser from "phaser";
 import { clamp } from "./utils";
+
+
+// TODO: look into object recycling for optimization purposes later: https://enable3d.io/examples/objects-recycling.html
 
 export default class BaseGame extends Scene3D {
     constructor() {
@@ -16,14 +19,14 @@ export default class BaseGame extends Scene3D {
     }
 
     init() {
-        this.accessThirdDimension();
-        // this.third.physics.debug.enable()
+        this.accessThirdDimension({softBodies: true});
+        this.third.physics.debug.enable();
         console.log('base scene init done')
 
         this.input.keyboard.on('keydown', this.handleKeyDown, this);
         this.input.keyboard.on('keyup', this.handleKeyUp, this);
         this.input.on('wheel', this.handleMouseWheel, this)
-        this.characterSetup()
+        // this.characterSetup()
     }
 
     characterSetup() {
@@ -99,11 +102,10 @@ export default class BaseGame extends Scene3D {
               y = this.player.body.velocity.y,
               z = Math.cos(theta) * (speed * this.inputAxis.z)
 
-            this.player.body.setVelocity(x, y, z)
+            this.player.body.setVelocity(x, y, z);
         }
-
         // update camera
-        const pos = this.player.position.clone()
+        const pos = this.player ? this.player.position.clone() : {x:0, y:0, z:0};
         this.third.camera.position.set(pos.x, pos.y + this.zoom.y, pos.z + this.zoom.z)
         this.third.camera.lookAt(pos.x, pos.y, pos.z)
 

@@ -1,6 +1,5 @@
 import Phaser from "phaser";
 import MoonWarsGame from "../games/moonwarsgame/main";
-
 import * as React from "react";
 import { enable3d, Canvas } from '@enable3d/phaser-extension';
 import { GAME_HEIGHT, GAME_WIDTH } from "../config";
