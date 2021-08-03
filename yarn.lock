@@ -2805,6 +2805,11 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
 
+"bitecs@^0.3.16-3-alpha":
+  "integrity" "sha512-+sbPOKjRw6UHTAuSHpMgNEl7BNfSeCP7l3tkC5ZIudB7/OvHbCZSZW/ZbEpDLyd79PCDRC2icWmMfvntoNYEiA=="
+  "resolved" "https://registry.npmjs.org/bitecs/-/bitecs-0.3.16-3-alpha.tgz"
+  "version" "0.3.16-3-alpha"
+
 "bluebird@^3.5.5":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
@@ -8956,6 +8961,13 @@
   "resolved" "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz"
   "version" "2.0.3"
 
+"project-repl@^1.6.1":
+  "integrity" "sha512-y20UYnCeq+dmwhbo0H+adVuDf/vYvDitnXNFCYlj9H8+Zd9r1J8V1DEo7u2FSGdP1EeWd0b7orECsyUDzypj+Q=="
+  "resolved" "https://registry.npmjs.org/project-repl/-/project-repl-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "recursive-readdir" "^2.2.2"
+
 "promise-inflight@^1.0.1":
   "integrity" "sha1-mEcocL8igTL8vdhoEputEsPAKeM="
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
@@ -9468,7 +9480,7 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"recursive-readdir@2.2.2":
+"recursive-readdir@^2.2.2", "recursive-readdir@2.2.2":
   "integrity" "sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg=="
   "resolved" "https://registry.npmjs.org/recursive-readdir/-/recursive-readdir-2.2.2.tgz"
   "version" "2.2.2"

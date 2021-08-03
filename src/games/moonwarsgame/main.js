@@ -1,32 +1,30 @@
 import BaseGame from "../shared/base";
-import { THREE } from "@enable3d/phaser-extension";
-import { createSoftVolume } from "../shared/utils";
+import { THREE } from "@enable3d/phaser-extension"; 
+import { Position, Mesh } from "../ecs/components";
 
 export default class MoonWarsGame extends BaseGame {
     constructor() {
         super({ key: 'MoonWarsGame' })
-        this.softBodies = [];
     }
     
     preload() {       
-        
+       let geometry = new THREE.BoxGeometry( 1, 1, 1 );
+       this.addGeometry( geometry );
+
+       let material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+       this.addMaterial( material );
     }
 
 
     init() {
-        super.init();
-
-        this.third.load.preload('safemoonlogo', '../assets/safemoon-logo.png');
-
-        const volumeMass = 15;
-        const sphereGeometry = new THREE.SphereGeometry( 1, 32, 32 );
-        sphereGeometry.translate( 0, 3, 0 );
-        let player = createSoftVolume( sphereGeometry, volumeMass, 161, this );
-        this.scene.add('player', player);
-        
     }
 
     create() {
         super.create();
+
+        this.makeEntity('player', [
+            [Position, { x: 0, y: 0, z: 0 }],
+            [Mesh, { geometry_id: 0, material_id: 0 }]
+        ]);
     }
 }
